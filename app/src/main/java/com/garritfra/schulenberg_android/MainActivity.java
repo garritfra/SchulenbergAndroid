@@ -48,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements
         navigationView.setNavigationItemSelectedListener(this);
 
         HomeScreenFragment homeScreenFragment = new HomeScreenFragment();
+
+        //TODO
+        AddReservationFragment addReservationFragment = new AddReservationFragment();
         setToFragment(homeScreenFragment);
 
 

@@ -4,8 +4,6 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +12,16 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HomeScreenFragment.OnFragmentInteractionListener} interface
+ * {@link AddReservationFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link HomeScreenFragment#newInstance} factory method to
+ * Use the {@link AddReservationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeScreenFragment extends Fragment {
+public class AddReservationFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public HomeScreenFragment() {
+    public AddReservationFragment() {
         // Required empty public constructor
     }
 
@@ -31,10 +29,12 @@ public class HomeScreenFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @return A new instance of fragment HomeScreenFragment.
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment AddReservationFragment.
      */
-    public static HomeScreenFragment newInstance() {
-        HomeScreenFragment fragment = new HomeScreenFragment();
+    public static AddReservationFragment newInstance(String param1, String param2) {
+        AddReservationFragment fragment = new AddReservationFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -50,11 +50,18 @@ public class HomeScreenFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home_screen, container, false);
 
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.main_container, new DatePickerDialogFragment());
+        View view = inflater.inflate(R.layout.fragment_add_reservation, container, false);
+
+        View dateFromCard = view.findViewById(R.id.date_from_card);
+        View dateToCard = view.findViewById(R.id.date_to_card);
+
+        dateFromCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         // Inflate the layout for this fragment
         return view;
