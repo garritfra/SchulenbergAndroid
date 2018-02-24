@@ -1,0 +1,37 @@
+@startuml
+
+title Classes - Class Diagram
+
+
+class BaseModel {
+    - id : int
+    - lastId : int
+    + BaseModel()
+    - generateId() : int
+}
+
+class Reservation {
+    - user : User
+    - dateStart : Calendar
+    - dateEnd : Calendar
+    - numberOfPeople : int
+    
+}
+
+BaseModel <|-- Reservation
+
+class User {
+    - firstName : String
+    - lastName : String
+    - reservationList : LinkedList<Reservation>
+    + User(firstName : String, lastName : String)
+    + newReservation(reservation : Reservation)
+    + cancelReservation(reservation : Reservation)
+    + getUpcomingReservations() : List<Reservation>
+    + getNextReservation() : Reservation
+}
+
+BaseModel <|-- User
+Reservation -left- User
+
+@enduml
