@@ -1,5 +1,7 @@
 package com.garritfra.schulenberg_android.model;
 
+import android.service.restrictions.RestrictionsReceiver;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,12 +21,14 @@ public class User extends BaseModel {
         this.reservationList = new LinkedList<>();
     }
 
-    public void newReservation() {
+    public boolean newReservation(Reservation reservation) {
         //TODO
+        return false;
     }
 
-    public void cancelReservation() {
+    public boolean cancelReservation(Reservation reservation) {
         //TODO
+        return false;
     }
 
     public LinkedList<Reservation> getUpcomingReservations() {
