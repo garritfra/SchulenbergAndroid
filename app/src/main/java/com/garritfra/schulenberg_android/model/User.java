@@ -18,4 +18,48 @@ public class User extends BaseModel {
         this.lastName = lastName;
         this.reservationList = new LinkedList<>();
     }
+
+    public void newReservation() {
+        //TODO
+    }
+
+    public void cancelReservation() {
+        //TODO
+    }
+
+    public LinkedList<Reservation> getUpcomingReservations() {
+        //TODO
+        return new LinkedList<>();
+    }
+
+    public Reservation getNextReservation() {
+        //TODO
+        return this.reservationList.get(0);
+    }
+
+    public LinkedList<Reservation> getReservationList() {
+        return reservationList;
+    }
+
+    public void setReservationList(LinkedList<Reservation> reservationList) {
+        this.reservationList = reservationList;
+    }
+
+    public String getLastName() {
+
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getFirstName() {
+
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 }
