@@ -17,6 +17,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.garritfra.schulenberg_android.Util.Mock.ReservationMock;
+import com.garritfra.schulenberg_android.Util.Mock.UserMock;
+import com.garritfra.schulenberg_android.model.Reservation;
+import com.garritfra.schulenberg_android.model.User;
+
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
         HomeScreenFragment.OnFragmentInteractionListener
@@ -50,6 +55,11 @@ public class MainActivity extends AppCompatActivity implements
         HomeScreenFragment homeScreenFragment = new HomeScreenFragment();
         setToFragment(homeScreenFragment);
 
+
+        User userMock = UserMock.userMock();
+
+        Reservation reservationMock = ReservationMock.futureReservationMock();
+        userMock.newReservation(reservationMock);
 
 
 

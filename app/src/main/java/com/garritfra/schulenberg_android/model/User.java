@@ -2,9 +2,13 @@ package com.garritfra.schulenberg_android.model;
 
 import android.service.restrictions.RestrictionsReceiver;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by garritfra on 24.02.18.
@@ -26,6 +30,13 @@ public class User extends BaseModel {
 
     public boolean newReservation(Reservation reservation) {
         this.reservationList.add(reservation);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference("reservations");
+        String idString = Integer.toString(reservation.getId());
+
+        reference.child(idString).setValue(reservation);
+
 
         //Boolean flag for future exception handling
         return true;

@@ -1,5 +1,7 @@
 package com.garritfra.schulenberg_android.model;
 
+import com.google.firebase.database.Exclude;
+
 import java.util.Calendar;
 
 /**
@@ -45,10 +47,12 @@ public class Reservation extends BaseModel {
         this.numberOfPeople = numberOfPeople;
     }
 
+
     public Calendar getDateEnd() {
 
         return dateEnd;
     }
+
 
     public void setDateEnd(Calendar dateEnd) {
         this.dateEnd = dateEnd;
@@ -58,6 +62,7 @@ public class Reservation extends BaseModel {
 
         return dateStart;
     }
+
 
     public void setDateStart(Calendar dateStart) {
         this.dateStart = dateStart;

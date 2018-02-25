@@ -15,6 +15,7 @@ import java.util.LinkedList;
  * User Class tests
  */
 
+
 public class UserTest {
     User userMock;
     Reservation pastReservationMock;
