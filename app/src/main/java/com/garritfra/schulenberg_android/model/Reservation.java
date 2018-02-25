@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 /**
  * Created by garritfra on 24.02.18.
+ * Model for Reservation
  */
 
 public class Reservation extends BaseModel {
@@ -12,6 +13,7 @@ public class Reservation extends BaseModel {
     private Calendar dateStart;
     private Calendar dateEnd;
     private int numberOfPeople;
+    private boolean cancelled;
 
     public Reservation(User user, Calendar dateStart, Calendar dateEnd, int numberOfPeople) {
 
@@ -20,6 +22,19 @@ public class Reservation extends BaseModel {
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.numberOfPeople = numberOfPeople;
+        this.cancelled = false;
+    }
+
+    public void cancel() {
+        this.cancelled = true;
+    }
+
+    public void setCancelled(boolean bool) {
+        this.cancelled = bool;
+    }
+
+    public boolean isCancelled() {
+        return cancelled;
     }
 
     public int getNumberOfPeople() {

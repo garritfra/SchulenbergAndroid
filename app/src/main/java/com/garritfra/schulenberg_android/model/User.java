@@ -2,11 +2,14 @@ package com.garritfra.schulenberg_android.model;
 
 import android.service.restrictions.RestrictionsReceiver;
 
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * Created by garritfra on 24.02.18.
+ * <p>
+ * Base Model for ID Management
  */
 
 public class User extends BaseModel {
@@ -22,23 +25,39 @@ public class User extends BaseModel {
     }
 
     public boolean newReservation(Reservation reservation) {
-        //TODO
-        return false;
+        this.reservationList.add(reservation);
+
+        //Boolean flag for future exception handling
+        return true;
     }
 
     public boolean cancelReservation(Reservation reservation) {
-        //TODO
-        return false;
+        reservation.cancel();
+
+        //Boolean flag for future exception handling
+        return true;
     }
 
     public LinkedList<Reservation> getUpcomingReservations() {
-        //TODO
-        return new LinkedList<>();
+
+        LinkedList<Reservation> result = new LinkedList<>();
+
+        for (Reservation reservation : this.reservationList) {
+            if (reservation.getDateStart().after(Calendar.getInstance())) {
+                result.add(reservation);
+            }
+        }
+
+        return result;
     }
 
     public Reservation getNextReservation() {
-        //TODO
-        return this.reservationList.get(0);
+        for (Reservation reservation : reservationList) {
+            if (reservation.getDateStart().after(Calendar.getInstance())) {
+                return reservation;
+            }
+        }
+        return null;
     }
 
     public LinkedList<Reservation> getReservationList() {
