@@ -1,8 +1,12 @@
 package com.garritfra.schulenberg_android.Util.Mock;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import com.garritfra.schulenberg_android.model.Reservation;
 import com.garritfra.schulenberg_android.model.User;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 /**
@@ -13,22 +17,24 @@ import java.util.Calendar;
 
 public class ReservationMock {
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static Reservation futureReservationMock() {
-        Calendar dateStart = Calendar.getInstance();
-        dateStart.add(Calendar.DATE, 5);
+        LocalDateTime dateStart = LocalDateTime.now();
+        dateStart.plusDays(5);
 
-        Calendar dateEnd = dateStart;
-        dateEnd.add(Calendar.DATE, 3);
+        LocalDateTime dateEnd = dateStart;
+        dateEnd.plusDays(3);
 
         return new Reservation(UserMock.userMock(), dateStart, dateEnd, 3);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public static Reservation pastReservationMock() {
-        Calendar dateStart = Calendar.getInstance();
-        dateStart.add(Calendar.DATE, -5);
+        LocalDateTime dateStart = LocalDateTime.now();
+        dateStart.minusDays(5);
 
-        Calendar dateEnd = dateStart;
-        dateEnd.add(Calendar.DATE, 3);
+        LocalDateTime dateEnd = dateStart;
+        dateEnd.plusDays(3);
 
         return new Reservation(UserMock.userMock(), dateStart, dateEnd, 3);
     }

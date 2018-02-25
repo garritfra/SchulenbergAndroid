@@ -2,8 +2,7 @@ package com.garritfra.schulenberg_android.model;
 
 import com.google.firebase.database.Exclude;
 
-import java.util.Calendar;
-
+import java.time.LocalDateTime;
 /**
  * Created by garritfra on 24.02.18.
  * Model for Reservation
@@ -12,12 +11,12 @@ import java.util.Calendar;
 public class Reservation extends BaseModel {
 
     private User user;
-    private Calendar dateStart;
-    private Calendar dateEnd;
+    private LocalDateTime dateStart;
+    private LocalDateTime dateEnd;
     private int numberOfPeople;
     private boolean cancelled;
 
-    public Reservation(User user, Calendar dateStart, Calendar dateEnd, int numberOfPeople) {
+    public Reservation(User user, LocalDateTime dateStart, LocalDateTime dateEnd, int numberOfPeople) {
 
         super();
         this.user = user;
@@ -48,23 +47,23 @@ public class Reservation extends BaseModel {
     }
 
 
-    public Calendar getDateEnd() {
+    public LocalDateTime getDateEnd() {
 
         return dateEnd;
     }
 
 
-    public void setDateEnd(Calendar dateEnd) {
+    public void setDateEnd(LocalDateTime dateEnd) {
         this.dateEnd = dateEnd;
     }
 
-    public Calendar getDateStart() {
+    public LocalDateTime getDateStart() {
 
         return dateStart;
     }
 
 
-    public void setDateStart(Calendar dateStart) {
+    public void setDateStart(LocalDateTime dateStart) {
         this.dateStart = dateStart;
     }
 

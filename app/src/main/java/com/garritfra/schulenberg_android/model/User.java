@@ -1,10 +1,13 @@
 package com.garritfra.schulenberg_android.model;
 
+import android.os.Build;
 import android.service.restrictions.RestrictionsReceiver;
+import android.support.annotation.RequiresApi;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
@@ -49,12 +52,13 @@ public class User extends BaseModel {
         return true;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public LinkedList<Reservation> getUpcomingReservations() {
 
         LinkedList<Reservation> result = new LinkedList<>();
 
         for (Reservation reservation : this.reservationList) {
-            if (reservation.getDateStart().after(Calendar.getInstance())) {
+            if (reservation.getDateStart().isAfter(LocalDateTime.now())) {
                 result.add(reservation);
             }
         }
@@ -62,9 +66,10 @@ public class User extends BaseModel {
         return result;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public Reservation getNextReservation() {
         for (Reservation reservation : reservationList) {
-            if (reservation.getDateStart().after(Calendar.getInstance())) {
+            if (reservation.getDateStart().isAfter(LocalDateTime.now())) {
                 return reservation;
             }
         }

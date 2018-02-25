@@ -29,8 +29,8 @@ public class ReservationTest {
 
         anotherFutureReservation = null;
         anotherFutureReservation = ReservationMock.futureReservationMock();
-        anotherFutureReservation.getDateStart().add(Calendar.DATE, 5);
-        anotherFutureReservation.getDateEnd().add(Calendar.DATE, 5);
+        anotherFutureReservation.getDateStart().plusDays(5);
+        anotherFutureReservation.getDateEnd().plusDays(5);
 
         pastReservationMock = null;
         pastReservationMock = ReservationMock.pastReservationMock();
