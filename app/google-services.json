@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "439631747047",
+    "firebase_url": "https://schulenberg-oberharz.firebaseio.com",
+    "project_id": "schulenberg-oberharz",
+    "storage_bucket": "schulenberg-oberharz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439631747047:android:299f762adbd0aa1b",
+        "android_client_info": {
+          "package_name": "com.garrit.schulenberg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439631747047-n66kmdlikn63jfjadmpqha1hhfdbpp3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garrit.schulenberg",
+            "certificate_hash": "33ad9fa5ac9f25795ff87faa7e55dee6f61b82ab"
+          }
+        },
+        {
+          "client_id": "439631747047-8h0evra0vdk0b95874usm1fdradcvqh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM13xu2jJ5CFpdN5qpN-GfT4-wWoY8i6c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439631747047-8h0evra0vdk0b95874usm1fdradcvqh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439631747047:android:3230b1d9c9ccc17f",
+        "android_client_info": {
+          "package_name": "com.garritfra.schulenberg_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "439631747047-kgkutlocnt0g477v8v2sr428r7mrk3aq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.garritfra.schulenberg_android",
+            "certificate_hash": "8266d739aeddcdfdc43620e80917673d8ec625b4"
+          }
+        },
+        {
+          "client_id": "439631747047-8h0evra0vdk0b95874usm1fdradcvqh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM13xu2jJ5CFpdN5qpN-GfT4-wWoY8i6c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "439631747047-8h0evra0vdk0b95874usm1fdradcvqh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
