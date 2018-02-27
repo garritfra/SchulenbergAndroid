@@ -4,6 +4,8 @@ import android.os.Build;
 import android.service.restrictions.RestrictionsReceiver;
 import android.support.annotation.RequiresApi;
 
+import com.garritfra.schulenberg_android.DAO.DAO;
+import com.garritfra.schulenberg_android.DAO.ReservationDAO;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -34,11 +36,7 @@ public class User extends BaseModel {
     public boolean newReservation(Reservation reservation) {
         this.reservationList.add(reservation);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference reference = database.getReference("reservations");
-        String idString = Integer.toString(reservation.getId());
-
-        reference.child(idString).setValue(reservation);
+        DAO.writeReservationToDatabase(this, reservation);
 
 
         //Boolean flag for future exception handling
