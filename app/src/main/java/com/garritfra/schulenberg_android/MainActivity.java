@@ -25,6 +25,8 @@ import com.garritfra.schulenberg_android.Util.Mock.UserMock;
 import com.garritfra.schulenberg_android.model.Reservation;
 import com.garritfra.schulenberg_android.model.User;
 
+import java.util.LinkedList;
+
 public class MainActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener,
         HomeScreenFragment.OnFragmentInteractionListener
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements
         Reservation pastReservationMock = ReservationMock.pastReservationMock();
         userMock.newReservation(futureReservationMock);
         userMock.newReservation(pastReservationMock);
+        LinkedList<Reservation> reservationLinkedList = userMock.getReservationList();
 
     }
 

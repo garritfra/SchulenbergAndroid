@@ -75,7 +75,7 @@ public class User extends BaseModel {
     }
 
     public LinkedList<Reservation> getReservationList() {
-        return reservationList;
+        return DAO.getReservationsForUser(this);
     }
 
     public void setReservationList(LinkedList<Reservation> reservationList) {
